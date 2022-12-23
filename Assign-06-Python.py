@@ -2,7 +2,7 @@
 
 # Created By: Nathan
 # Date: Dec. 21, 2022
-# This program finds the even numbers of a list
+# This program finds the even numbers of a list it then displays it
 
 # Function for finding the average of even numbers
 def average_even(even_list_num):
