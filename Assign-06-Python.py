@@ -91,8 +91,15 @@ def main():
                     average = average_even(even_integers)
                     # print the average
                     print(f"The average of all the numbers is {average}")
-                # break out of the loop
-                break
+                    # breaks out of the loop
+                    break
+                elif average_question_even.upper() == "N":
+                    # break out of the loop
+                    break
+                else:
+                    print("Enter either Y or N")
+                    # break out of the loop
+                    break
             # elif even_or_odd is "O"
             elif even_or_odd.upper() == "O":
                 # call odd_list(user_num_list)
@@ -109,8 +116,16 @@ def main():
                     average = average_odd(odd_integers)
                     # print the average
                     print(f"The average of all the numbers is {average}")
-                # break out of the loop
-                break
+                    # breaks out of the loop
+                    break
+                # Check if they entered N
+                elif average_question_odd.upper() == "N":
+                    # breaks out of the loop
+                    break
+                else:
+                    print("Enter either Y OR N")
+                    # breaks out of the loop
+                    break
             else:
                 # You must enter either E or O
                 print("Enter either 'E'or 'O'")
@@ -121,7 +136,7 @@ def main():
             user_num_int = int(user_num_str)
         except:
             # If they entered a invalid input then display this
-            print("You must enter a valid number.")
+            print("You must enter a valid number or 'STOP'.")
             # break out of the loop
             break
         else:
