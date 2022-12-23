@@ -8,12 +8,14 @@
 def average_even(even_list_num):
     # set sum to 0
     sum = 0
-    # for each loop to calculate the sum of all the numbers
+    # for each loop to calculate the sum of all the even numbers
     for counter in even_list_num:
         sum = sum + counter
     # sum divided by the length to find the average
     average = sum / len(even_list_num)
-    # return the average
+    # round the average to 2 decimal places
+    average = round(average, 2)
+    # return average
     return average
 
 
@@ -21,12 +23,14 @@ def average_even(even_list_num):
 def average_odd(odd_list_num):
     # set sum to 0
     sum = 0
-    # for each loop to calculate the sum of all the numbers
+    # for each loop to calculate the sum of all the odd numbers
     for counter in odd_list_num:
         sum = sum + counter
     # sum divided by the length to find the average
     average = sum / len(odd_list_num)
     # return the average
+    average = round(average, 2)
+    # return average
     return average
 
 
@@ -45,6 +49,7 @@ def odd_list(num_list):
     return odd_num_list
 
 
+# function that finds the even numbers inside the list
 def even_list(num_list):
     # Create a new list to store the even integers
     even_num_list = []
@@ -64,23 +69,23 @@ def main():
     user_num_list = []
     # while true loop so the user can enter multiple integers
     while True:
-        # Ask the user to enter a list of integers``
+        # Ask the user to enter a list of integers
         user_num_str = input("Enter a integer or type stop: ")
         # if user_num_str is "STOP"
         if user_num_str.upper() == "STOP":
-            # Asks the user if they want to see the even integers, odd integers or both in the list
+            # Asks the user if they want to see the even integers, odd integers in the list
             even_or_odd = input("Type e for even and type o for odd: ")
             # if even_or_odd is "E"
             if even_or_odd.upper() == "E":
                 # call even_list(user_num_list)
                 even_integers = even_list(user_num_list)
                 # Print the even integers
-                print(f"The even integers are: {even_integers}")
+                print(f"The even integers are {even_integers}")
                 # Asks the user if they want to find the average of the new list
                 average_question_even = input(
                     "Would you like to find the average of these numbers? (y or n): "
                 )
-                # if they answer with Y
+                # if they answer with "Y"
                 if average_question_even.upper() == "Y":
                     # call average_even(even_integers)
                     average = average_even(even_integers)
@@ -98,7 +103,7 @@ def main():
                 average_question_odd = input(
                     "Would you like to find the average of these numbers? (y or n): "
                 )
-                # if they answer with Y
+                # if they answer with "Y"
                 if average_question_odd.upper() == "Y":
                     # call average_even(odd_integers)
                     average = average_odd(odd_integers)
@@ -107,11 +112,11 @@ def main():
                 # break out of the loop
                 break
             else:
-                # You must enter either E , O or BOTH
-                print("Enter either 'E', 'O' ")
+                # You must enter either E or O
+                print("Enter either 'E'or 'O'")
                 # break out of the loop
                 break
-        # Call the positive_list function to get a list of even integers
+        # Try catch to catch any invalid inputs
         try:
             user_num_int = int(user_num_str)
         except:
